@@ -5,5 +5,6 @@ int n = 0;
 string sN = "";
 for (int i = 2; i <= N; i = i + 2)
 {
-    sN = sN + " " + Convert.ToString(i);
+    sN = sN + " " + Convert.ToString(i);}
+    
 Console.WriteLine(sN);
