@@ -11,29 +11,17 @@
 // 3 -> Среда 
 // 5 -> Пятница
 
-Console.WriteLine("Как бы вводим два числа");
-// string a = Console.ReadLine();
-// int num = Convert.ToInt32(answer);
-
-Console.WriteLine("введите число 2");
+Console.WriteLine("введите какое-нить число [побольше]");
 string sa = Console.ReadLine();
 int a = Convert.ToInt32(sa);
-Console.WriteLine("введите число 5");
+Console.WriteLine("введите другое число [поменьше]");
 string sb = Console.ReadLine();
 int b = Convert.ToInt32(sb);
-
-// int a = 3, b = 9;
 
 if (b*b==a) {
     Console.WriteLine("Первое число является квадратом второго!");
 }
 else 
 {
-    Console.WriteLine("Первое число неявляется квадратом второго!");
+    Console.WriteLine("Первое число не является квадратом второго!");
 }
-//Console.WriteLine("Квадрат числа " + answer + " равен " + num2);
-
-
-// a = 2, b = 10 -> нет 
-// a = 9, b = -3 -> да 
-// a = -3 b = 9 -> нет

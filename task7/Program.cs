@@ -1,9 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Введите число для проверки его четности:");
+﻿Console.WriteLine("Введите трехзначное число для вывода последней его цифры:");
+// полученное число перевести в цифру, разделить на 10, вычесть их исходного и получить остаток (3-ю цифру)
 int num = Convert.ToInt32(Console.ReadLine());
-// if (num % == 0) {
-    // Console.WriteLine("число четное!");
-    Console.WriteLine(num % 2 == 0 ? "Четное" : "Не четное");
-// }
+int num2 = num/10;
+Console.WriteLine(num-num2*10);
+//Console.WriteLine(num % 2 == 0 ? "Четное" : "Не четное");
 
 
