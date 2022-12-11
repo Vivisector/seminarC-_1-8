@@ -11,7 +11,7 @@ int ReadInt(string msg)
 }
 int A = ReadInt("Введите число:");
 
-Console.WriteLine(A);
+// Console.WriteLine(A);
 // метод суммирования от 1 до A
 int summaToNum(int N)
 {
