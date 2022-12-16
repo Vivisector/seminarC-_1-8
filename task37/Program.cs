@@ -6,15 +6,15 @@
 
 // задаем псевдослучайный размер массива
 int L = new Random().Next(4,8);
-// int L = 7;
-Console.WriteLine("Длина массива: " + L);
 int[] arr = new int[L];
-int LPair = (L%2==0 ? L/2 : L/2+1);
+// int LPair = (L%2==0 ? L/2 : L/2+1);
+int LPair = L/2+L%2; // этот короткий вариант записи подсмотрел на семинаре
 int[] arrPair = new int[LPair];
 
 void FillArr(int[] arr, int L){
+    Random rand = new Random();
     for (int i=0; i<L;i++){
-        arr[i] = new Random().Next(1,10);
+        arr[i] = rand.Next(1,10);
     }
 }
 
@@ -27,11 +27,11 @@ void ReadArr(int[] arr, int L){
 FillArr(arr, L);
 Console.Write("Исходный массив:\n");
 ReadArr(arr, L);
-
-// собираем второй массив с произведениями крайних пар
+Console.Write("\nЕго длина: " + L);
+// собираем второй массив с произведениями пар
 for (int m=0; m<LPair; m++){
 arrPair[m] = arr[m]*arr[L-m-1];
 }
 if (L%2!=0) arrPair[LPair-1] = arr[LPair-1]; // для нечетного колва элементов переписываем срединныйэлемент из первого массива
-Console.WriteLine();
+Console.WriteLine("\nПопарное произведение крайних элементов:");
 ReadArr(arrPair, LPair);
