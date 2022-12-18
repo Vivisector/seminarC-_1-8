@@ -3,7 +3,7 @@
 // 2. по полученному колву разрядов создать массив
 // 3. массив заполнить 1 и 0 по методике деления на два исходного числа
 // 4. развернуть массив и вывести экран
-
+/*
 Console.WriteLine("Введите целое число:");
 int decima = Convert.ToInt32(Console.ReadLine());
 int razryadof = CountRazryady(decima);
@@ -41,3 +41,11 @@ Console.Write(arr[i]);
 }
 
 */
+int a = 44;
+void toBinary(int a){
+    if (a <= 0) return;
+    toBinary (a/2);
+    Console.Write(a%2);
+}
+Console.Write($"Исходное число {a} в двоичном представлении будет выглядеть как ");
+toBinary(a);
