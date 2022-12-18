@@ -5,6 +5,13 @@
 
 Console.WriteLine("Введите число:");
 int N = Convert.ToInt32(Console.ReadLine());
+void PrintBinary(int n) //через рекурсию
+{
+    if (n <= 0) return;
+    else PrintBinary(n / 2);
+    Console.Write(n%2);
+}
+/*
 // определитель количества разрядов в двоичке
 int Counter(int n)
 {
@@ -32,5 +39,7 @@ void reverse(int[] array){
     }
 }
 reverse(binarka);
+*/
 Console.Write($"это же число в двоичном представлении: ");
-Console.Write($"{string.Join("", binarka)}");
+PrintBinary(N);
+// Console.Write($"{string.Join("", binarka)}");
