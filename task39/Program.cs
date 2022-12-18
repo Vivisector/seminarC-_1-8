@@ -13,16 +13,19 @@ int[] FillArr(int length, int L, int R){
         }
     return arr;
 }
-void ReadArr(int[] arr){
-    Console.WriteLine($"Исходный массив:    {string.Join(", ", arr)}");
-}
 void reverse(int[] array){
-    for (int k=array.Length-1; k>=0;k--){
-        Console.Write($"{array[k]}, ");
+    int tmp = 0;
+    for (int i=0; i< array.Length/2; i++)
+    {
+        tmp = array[i];
+        array[i] = array[array.Length-1-i];
+        array[array.Length-1-i] = tmp;
     }
+
 }
 
 int[] matr = FillArr(LEN, L, R);
-ReadArr(matr);
-Console.Write($"Развернутый массив: ");
+Console.WriteLine($"Исходный массив:    [{string.Join(", ", matr)}]");
+
 reverse(matr);
+Console.Write($"Развернутый массив: [{string.Join(", ", matr)}]");
