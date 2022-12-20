@@ -17,9 +17,9 @@ for (int i = 0; i < chArr.Length - 1; i++)
 // 1 - штука
 // 2,3,4 - штуки
 // 5-20 штук
-if (cnt % 10 == 1 && cnt !=11 ) {Console.WriteLine($"Положительных чисел введено {cnt} штука");}
-else if (cnt % 10 == 2 || cnt % 10 == 3 || cnt % 10 == 4) { Console.WriteLine($"Положительных чисел введено {cnt} штуки"); }
-else {Console.WriteLine($"Положительных чисел введено {cnt} штук");}
+if (cnt % 10 == 1 && cnt !=11 ) {Console.WriteLine($"Положительных чисел введено {cnt} штука.");}
+else if ((cnt % 10 == 2 || cnt % 10 == 3 || cnt % 10 == 4) && (cnt !=12 && cnt !=13 && cnt !=14)) { Console.WriteLine($"Положительных чисел введено {cnt} штуки."); }
+else {Console.WriteLine($"Положительных чисел введено {cnt} штук.");}
 
 
 // int Num = 0;
