@@ -14,9 +14,12 @@ int b2 = Convert.ToInt32(Console.ReadLine());
 
 double y = 0;
 double m = b2 - b1;
-double n = k1 - k2;
-double x = m/n;
-// x = (b2 - b1) / (k1 - k2); //получается ноль почему-то
-y = k1 * x + b1;
-
-Console.WriteLine($"Точка пересечения двух полученных прямых имеет координаты Х:{Math.Round(x, 2)}, по Y:{Math.Round(y, 2)}");
+double n = k1 - k2; // если л равны - прямые параллельны
+// проверка на параллельность
+if (n==0) Console.WriteLine("Прямые параллельны!");
+    else{
+        double x = m/n;
+        // x = (b2 - b1) / (k1 - k2); //получается ноль почему-то
+        y = k1 * x + b1;
+        Console.WriteLine($"Точка пересечения двух полученных прямых имеет координаты Х:{Math.Round(x, 2)}, по Y:{Math.Round(y, 2)}");
+}
