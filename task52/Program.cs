@@ -22,14 +22,13 @@ void ShowArr(int [,] matr) //демонстрация массива
 void GetSredneeArifmet(int [,] matr)
 {
     double S = 0;
-    for (int i=0; i<matr.GetLength(1); i++)// просмотр столбца
+    for (int i=0; i<matr.GetLength(1); i++)// просмотр столбцов
     {
-        S=0;
-        for (int j=0; j<matr.GetLength(0); j++) 
+        for (int j=0; j<matr.GetLength(0); j++) //суммирование столобца
         {
             S = S + matr[j,i];
         }
-        Console.Write(Math.Round(S/matr.GetLength(0), 1) + "; ");
+        Console.Write(Math.Round(S/matr.GetLength(0), 1) + "; "); S=0; //обнуление переменной для нового столбца
     }
 // return;
 }
