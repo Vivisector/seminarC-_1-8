@@ -51,7 +51,7 @@ string MatrResection(int[,] matrResec, int rR, int cR) //формируем но
             for (int j = 0; j < matrResec.GetLength(0); j++){
             if (j != cR) s = s + Convert.ToInt32(matrResec[i, j])+" ";}
         }
-        s = s + "\n";
+        if (s!="") s = s + "\n"; // избегаем пустой строки в начале вывода измененной матрицы
     }
     return s;// matrResec;
 }
@@ -59,9 +59,9 @@ string MatrResection(int[,] matrResec, int rR, int cR) //формируем но
 int[,] m = FillArr(R, C);
 Console.WriteLine("\nИсходная матрица:");
 ShowArr(m);
-Console.WriteLine();
+// Console.WriteLine();
 Console.WriteLine($"Наименьший элемент: {m[GetMin(m).Item1, GetMin(m).Item2]}, расположен в строке {GetMin(m).Item1 + 1}, столбце {GetMin(m).Item2 + 1}");
-Console.WriteLine("После удаления соотвествующего ряда и столбца матрица принимает вид:");
+Console.WriteLine("После удаления соответвующего ряда и столбца матрица принимает вид:");
 int rResec = GetMin(m).Item1; int cResec = GetMin(m).Item2;
 Console.WriteLine(MatrResection(m, rResec, cResec));
 // ShowArr(MatrResection(m, rResec, cResec));
