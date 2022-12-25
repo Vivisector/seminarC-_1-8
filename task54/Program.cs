@@ -23,36 +23,25 @@ void ShowArr(int[,] matr)
             Console.Write(matr[i, j] + " "); Console.WriteLine();
     }
 }
+
 void SortingMatr(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        int[] arrtmp = new int[matr.GetLength(1)];
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {arrtmp[j] = matr[i, j]; //заполняем временый массив по текущей строке
-        } 
-        
-        // теперь строку сортируем
-        for (int k = 0; k < arrtmp.Length; k++)
-        {
-            int minPosition = k;    
-            for (int l = k+1; l < arrtmp.Length; l++)
-            { if (arrtmp[l] < arrtmp[minPosition]) minPosition = l; }
-            int tmp = arrtmp[k];
-            arrtmp[k] = arrtmp[minPosition];
-            arrtmp[minPosition] = tmp;
+        for (int j = 0; j < matr.GetLength(1); j++){
+        int minPosition = j;    
+            for (int k=j+1; k<matr.GetLength(1); k++)
+            {if (matr[i,k]<matr[i,minPosition]) minPosition = k;}
+                int temp = matr[i,j];
+                matr[i,j] = matr[i,minPosition];
+                matr[i,minPosition] = temp;
         }
-        // теперь заполняем строку матрицы отсортированной строкой
-        for (int m = 0; m < matr.GetLength(1); m++)
-        {matr[i,m] = arrtmp[m];}
-    }
-    // return matr;
+    } 
 }
 
 int[,] m = FillArr(R, C);
 Console.WriteLine("\nИсходная матрица:");
 ShowArr(m);
-Console.WriteLine();
 Console.WriteLine("Матрица с упорядоченными строками:");
 SortingMatr(m);
 ShowArr(m);
