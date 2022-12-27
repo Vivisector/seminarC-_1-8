@@ -34,7 +34,7 @@ int GetMinRow(int[,] matr)
     
     for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++) tmpSum = tmpSum + matr[i, j];
+        for (int j = 1; j < matr.GetLength(1); j++) tmpSum = tmpSum + matr[i, j];
         Console.WriteLine($"Сумма по строке {i}: {tmpSum}");
         if (tmpSum < minTmp)
         {
