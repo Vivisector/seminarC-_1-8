@@ -1,5 +1,36 @@
 ﻿// Задать массив из 12 элементов, случайные числа из [-9 - 9]. Найти сумму отриц и пложит элементов
 // квадратные пустые скобки в инициализации переменной говорит, что у нас будет возвращаться на одно число, а набор чисел
+
+// вариант метода с кортежем
+int[] arr = new int[12];
+int[] FillArr(int[] a)
+{
+    Random rand = new Random();
+    for (int i = 0; i < a.Length; i++)
+        arr[i] = rand.Next(-9, 10);
+    return a;
+}
+
+void ReadArr(int[] a)
+{for (int i = 0; i < a.Length; i++) Console.Write(arr[i] + " ");}
+
+// сумматор плюсов и минусов
+(int, int) Summator(int[] a)
+{
+    int min = 0;
+    int max = 0;
+    for (int i = 0; i < a.Length; i++)
+        if (arr[i] > 0) max = max + arr[i];
+         else min = min - arr[i];
+    return (max, min);
+}
+
+int[] m = FillArr(arr);
+Console.WriteLine("Сгенерированный массив:");
+ReadArr(arr);
+Console.WriteLine($"\nСумма положительных и отрицательных элементов равна {Summator(m).Item1} положительных и {Summator(m).Item2} отрицательных значений");
+
+/* старый вариант
 int[] arr = new int[12];
 int mPlus = 0;
 int mMinus = 0;
@@ -36,3 +67,4 @@ Console.WriteLine("-: " + mMinus);
 
 
 // Console.WriteLine("Hello, World!");
+*/
